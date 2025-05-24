@@ -12,7 +12,7 @@ jobs:
   e2e-tests:
 
   #máquina em que o job vai ser executado
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     # passos do script de build
     steps:
