@@ -18,6 +18,8 @@ jobs:
   #máquina em que o job vai ser executado
     runs-on: ubuntu-latest
 
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     # passos do script de build
     steps:
 
