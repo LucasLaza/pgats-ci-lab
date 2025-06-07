@@ -1,0 +1,15 @@
+# CI de nível 04 - Integrado com a pipe de desenvolvimento
+
+  name: 'Execução integrada'
+
+  on:
+    workflow_dispatch:
+
+  jobs:
+    inspecao:
+
+    unidade:
+
+    e2e-tests:
+
+    deploy:
