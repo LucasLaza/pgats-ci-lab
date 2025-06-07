@@ -40,5 +40,35 @@
     e2e-tests:
       runs-on: ubuntu-latest
 
+      steps:
+
+        - uses: actions/checkout@v4
+
+        - uses: actions/setup-node@v4
+          with:
+            node-version: 22.x
+
+        - name: Instalando o Yarn
+        - run: npm install -g yarn
+
+        - name : Instalando dependencias
+        - run: yarn
+
+        - name: Instalando playwright
+        - run: yarn playwright install
+
+        - name: Executando testes e2e
+        - run: yarn run e2e
+
+        - uses: actions/upload-artifact@v4
+          if: ${{ !cancelled() }}
+          with: 
+            name: relatorio
+            path: ./playwright-report 
+
     deploy:
       runs-on: ubuntu-latest
+
+      steps:
+        - name: Simulação de deploy
+          run: echo "Simulando o deploy!"
