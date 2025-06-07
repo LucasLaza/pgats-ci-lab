@@ -29,13 +29,13 @@
         - uses: actions/checkout@v4
 
         - name: Instalando Yarn
-        - run: npm install -g yarn
+          run: npm install -g yarn
 
         - name: Instalando dependencias
-        - run: yarn
+          run: yarn
 
         - name: Executando testes de unidade
-        - run: yarn test
+          run: yarn test
 
     e2e-tests:
       runs-on: ubuntu-latest
@@ -49,16 +49,16 @@
             node-version: 22.x
 
         - name: Instalando o Yarn
-        - run: npm install -g yarn
+          run: npm install -g yarn
 
         - name : Instalando dependencias
-        - run: yarn
+          run: yarn
 
         - name: Instalando playwright
-        - run: yarn playwright install
+          run: yarn playwright install
 
         - name: Executando testes e2e
-        - run: yarn run e2e
+          run: yarn run e2e
 
         - uses: actions/upload-artifact@v4
           if: ${{ !cancelled() }}
@@ -70,7 +70,6 @@
       runs-on: ubuntu-latest
 
       steps:
-        - uses: actions/checkout@v4
 
         - name: Simulação de deploy
           run: echo "Simulando o deploy!"
